@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import 'webcrypto-shim';
 
+// https://medium.com/@encryb/comparing-performance-of-javascript-cryptography-libraries-42fb138116f3
 @Injectable()
 export class CryptoService {
 
