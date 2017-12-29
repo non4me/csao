@@ -1,20 +1,62 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="csoa-welcome">
+  <div class="csoa-welcome__header">
+    <h2>Vítejte ve sjednávání účtu on-line</h2>
+  </div>
 
+  <div class="csoa-welcome__subheader">
+    <strong>Co budete potřebovat?</strong>
+  </div>
+
+  <div class="csoa-welcome__content grid">
+
+    <div class="csoa-welcome__teaser csoa-welcome__teaser--1 sm-12of12 md-6of12 csas-flex-sm">
+      <div class="csoa-welcome__teaser-img sm-2of12">
+        <img src="/assets/img/_csao-teaser-1.png">
+      </div>
+      <div class="csoa-welcome__teaser-text sm-10of12">
+        Připravte si <strong>platný občanský průkaz</strong>, abychom si mohli ověřit, že jste občan České republiky.
+        <br/>
+        Dále si najděte <strong>druhý doklad totožnosti</strong>, např. řidičský průkaz, nebo cestovní pas.
+      </div>
+    </div>
+
+    <div class="csoa-welcome__teaser csoa-welcome__teaser--2 sm-12of12 md-6of12 csas-flex-sm">
+      <div class="csoa-welcome__teaser-img sm-2of12">
+        <img src="/assets/img/_csao-teaser-2.png">
+      </div>
+      <div class="csoa-welcome__teaser-text sm-10of12">
+        Během sjednávání nového účtu obdržíte <strong>okamžitě</strong> na Váš současný účet platbu s
+        <strong>variabilním symbolem</strong>, kterým podepíšete smluvní dokumentaci.
+      </div>
+    </div>
+
+    <div class="csoa-welcome__teaser csoa-welcome__teaser--3 sm-12of12 md-6of12 csas-flex-sm">
+      <div class="csoa-welcome__teaser-img sm-2of12">
+        <img src="/assets/img/_csao-teaser-3.png">
+      </div>
+      <div class="csoa-welcome__teaser-text sm-10of12">
+        Pak už jen stačí mít po ruce <strong>mobilní telefon</strong>, přístup ke svému <strong>e-mailu</strong>
+        a přístup ke svému stávajícímu <strong>internetovému bankovnictví</strong>.
+      </div>
+    </div>
+
+    <div class="csoa-welcome__teaser csoa-welcome__teaser--4 sm-12of12 md-6of12 csas-flex-sm">
+      <div class="csoa-welcome__teaser-img sm-2of12">
+        <img src="/assets/img/_csao-teaser-4.png">
+      </div>
+      <div class="csoa-welcome__teaser-text sm-10of12">
+        Abyste naši platbu okamžitě obdrželi, musíte mít zřízený <strong>účet u jedné z následujících</strong> bank:
+        ČSOB, Komerční banka, Moneta, Raiffeisenbank, Equa, Unicredit bank, Era.
+      </div>
+    </div>
+  </div>
+
+  <div class="csoa-welcome__navigation">
+    <button class="csas-click csas-click--red" (click)="next()">Button</button>
+  </div>
+
+  <pre>
+    {{log}}
+  </pre>
+
+</div>

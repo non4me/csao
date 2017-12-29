@@ -1,9 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
 
-import { AppComponent } from './app.component';
-
+import {AppComponent} from './app.component';
+import {CryptoService} from './_shared/services/crypto/crypto.service';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [CryptoService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

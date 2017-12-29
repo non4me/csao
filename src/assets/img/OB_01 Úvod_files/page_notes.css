@@ -1,0 +1,159 @@
+#pageNotesHost {
+    font-size: 12px;
+    color:#4a4a4a;
+    height: 100%;
+}
+
+#pageNotesHostBtn a {
+    background: url('https://dxlfb468n8ekd.cloudfront.net/gsc/G92R3P/77/02/2b/77022b1ca0df4ddf9fcdc39e2b9833ba/plugins/page_notes/styles/images/notes_on.png?token=fda86cb9912a572eef346a5ac21ba109');
+    background: url('https://d2t44wh9rnwl5y.cloudfront.net/gsc/G92R3P/77/02/2b/77022b1ca0df4ddf9fcdc39e2b9833ba/plugins/page_notes/styles/images/notes_on.svg?token=7a90e30cde299fa008349a5498b64460'),linear-gradient(transparent, transparent);
+}
+
+.hashover #pageNotesHostBtn a:hover {
+    background: url('https://d2t44wh9rnwl5y.cloudfront.net/gsc/G92R3P/77/02/2b/77022b1ca0df4ddf9fcdc39e2b9833ba/plugins/page_notes/styles/images/notes_hover.png?token=f0ba8a3a0290fe3fdd0f150edf3e7ac2');
+    background: url('https://d2t44wh9rnwl5y.cloudfront.net/gsc/G92R3P/77/02/2b/77022b1ca0df4ddf9fcdc39e2b9833ba/plugins/page_notes/styles/images/notes_hover.svg?token=814ce7033b7464e44bc998bd2a95b47f'),linear-gradient(transparent, transparent);
+}
+
+#pageNotesHostBtn a.selected, #pageNotesHostBtn a.selected:hover {
+    background: url('https://d2v8ggac1o0f6z.cloudfront.net/gsc/G92R3P/77/02/2b/77022b1ca0df4ddf9fcdc39e2b9833ba/plugins/page_notes/styles/images/notes_off.png?token=8de3ac4cc0c82f44fe5c292c2fbd50ba');
+    background: url('https://d2v8ggac1o0f6z.cloudfront.net/gsc/G92R3P/77/02/2b/77022b1ca0df4ddf9fcdc39e2b9833ba/plugins/page_notes/styles/images/notes_off.svg?token=adaf0fbbe5fe8b0f018a6e1fafd5c6bc'),linear-gradient(transparent, transparent);
+}
+
+#footnotesButton {
+    background: url('https://d2t44wh9rnwl5y.cloudfront.net/gsc/G92R3P/77/02/2b/77022b1ca0df4ddf9fcdc39e2b9833ba/plugins/page_notes/styles/images/footnotes.png?token=6e25ed00bf545362b942f63dd0b3f0c5') no-repeat center center;
+    background: url('https://d2t44wh9rnwl5y.cloudfront.net/gsc/G92R3P/77/02/2b/77022b1ca0df4ddf9fcdc39e2b9833ba/plugins/page_notes/styles/images/footnotes.svg?token=dce2c1e63fe24bea31b1f9c29620df96') no-repeat center center,linear-gradient(transparent, transparent);
+}
+
+#footnotesButton:hover {
+    background: url('https://d2v8ggac1o0f6z.cloudfront.net/gsc/G92R3P/77/02/2b/77022b1ca0df4ddf9fcdc39e2b9833ba/plugins/page_notes/styles/images/footnotes_hover.png?token=6f65bd7f911cae73d3882078fdbbf5ed') no-repeat center center;
+    background: url('https://d2v8ggac1o0f6z.cloudfront.net/gsc/G92R3P/77/02/2b/77022b1ca0df4ddf9fcdc39e2b9833ba/plugins/page_notes/styles/images/footnotes_hover.svg?token=bac2341ae3cbc564601091bf9ee37098') no-repeat center center,linear-gradient(transparent, transparent);
+}
+
+#footnotesButton.sitemapToolbarButtonSelected, #footnotesButton.sitemapToolbarButtonSelected:hover {
+    background: url('https://d2v8ggac1o0f6z.cloudfront.net/gsc/G92R3P/77/02/2b/77022b1ca0df4ddf9fcdc39e2b9833ba/plugins/page_notes/styles/images/footnotes_on.png?token=ed2415f7944b8023d716e2fdf37413bb') no-repeat center center;
+    background: url('https://d26uhratvi024l.cloudfront.net/gsc/G92R3P/77/02/2b/77022b1ca0df4ddf9fcdc39e2b9833ba/plugins/page_notes/styles/images/footnotes_on.svg?token=6a7fce2f5f853750a8c976e5d6194ab2') no-repeat center center,linear-gradient(transparent, transparent);
+}
+
+.nextPageButton {
+    background: url('https://d2t44wh9rnwl5y.cloudfront.net/gsc/G92R3P/77/02/2b/77022b1ca0df4ddf9fcdc39e2b9833ba/plugins/page_notes/styles/images/forward.png?token=6c5e2903e5d24b9908d5a091d1053c7e') no-repeat center center;
+    background: url('https://d2t44wh9rnwl5y.cloudfront.net/gsc/G92R3P/77/02/2b/77022b1ca0df4ddf9fcdc39e2b9833ba/plugins/page_notes/styles/images/forward.svg?token=6474e91c2e769637777d8ad281823ed8') no-repeat center center,linear-gradient(transparent, transparent);    
+}
+
+.nextPageButton:hover {
+    background: url('https://d2v8ggac1o0f6z.cloudfront.net/gsc/G92R3P/77/02/2b/77022b1ca0df4ddf9fcdc39e2b9833ba/plugins/page_notes/styles/images/forward_hover.png?token=77fba34672f227e67f88494f453a283e') no-repeat center center;
+    background: url('https://d2v8ggac1o0f6z.cloudfront.net/gsc/G92R3P/77/02/2b/77022b1ca0df4ddf9fcdc39e2b9833ba/plugins/page_notes/styles/images/forward_hover.svg?token=1896b0c86a9bfdb0a5bd1be573f2bc14') no-repeat center center,linear-gradient(transparent, transparent);    
+}
+
+.prevPageButton {
+    background: url('https://d26uhratvi024l.cloudfront.net/gsc/G92R3P/77/02/2b/77022b1ca0df4ddf9fcdc39e2b9833ba/plugins/page_notes/styles/images/back.png?token=0425c94171bec71df94962a58a56bca1') no-repeat center center;
+    background: url('https://d2t44wh9rnwl5y.cloudfront.net/gsc/G92R3P/77/02/2b/77022b1ca0df4ddf9fcdc39e2b9833ba/plugins/page_notes/styles/images/back.svg?token=53fa059d56ad626a7447a651e32c5293') no-repeat center center,linear-gradient(transparent, transparent);    
+}
+
+.prevPageButton:hover {
+    background: url('https://d2v8ggac1o0f6z.cloudfront.net/gsc/G92R3P/77/02/2b/77022b1ca0df4ddf9fcdc39e2b9833ba/plugins/page_notes/styles/images/back_hover.png?token=33e967110330781eae0d9662b4c93920') no-repeat center center;
+    background: url('https://d26uhratvi024l.cloudfront.net/gsc/G92R3P/77/02/2b/77022b1ca0df4ddf9fcdc39e2b9833ba/plugins/page_notes/styles/images/back_hover.svg?token=159cf4dc318e678a8eae887df44c35af') no-repeat center center,linear-gradient(transparent, transparent);    
+}
+
+#pageNotesScrollContainer 
+{
+    overflow: auto;
+    width: 100%;
+    /*height: 100%;*/
+    -webkit-overflow-scrolling: touch;
+}    
+
+#pageNotesContainer 
+{
+    /*padding: 10px 10px 10px 12px;*/
+}
+
+#pageNotesContent 
+{
+	overflow: visible;
+}
+
+.pageNoteContainer 
+{
+    padding: 10px;
+}
+
+.pageNoteName 
+{
+    font-family: 'Trebuchet MS';
+	font-size: 14px;
+    font-weight: bold;
+	margin-bottom: 5px;
+	/*text-decoration: underline;*/
+	white-space: nowrap;
+}
+
+.pageNote 
+{
+    line-height: 21px;
+	/*margin-bottom: 20px;*/
+}
+
+.widgetNoteContainer {
+    padding: 10px;
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+}
+
+.widgetNoteContainerSelected {
+    background-color: white;
+    border-bottom: 1px solid #c2c2c2;
+    border-top: 1px solid #c2c2c2;
+}
+
+/*.widgetNoteContainer:hover {
+    background-color: white;
+    //border-bottom: 1px solid #c2c2c2;
+    //border-top: 1px solid #c2c2c2;
+}*/
+
+.widgetNoteFootnote {
+    display: inline-block;
+    /*vertical-align: top;
+    margin: 2px 5px 10px 0px;
+    padding: 1px 6px;
+    font-size: 10px;
+    color: #ffffff;
+    background-color: #0a6cd6;*/
+    width: 13px;
+    height: 12px;
+    padding-top: 1px;
+    text-align: center;
+    background-color: #138CDD;
+    /*-moz-box-shadow: 1px 1px 3px #aaa;
+    -webkit-box-shadow: 1px 1px 3px #aaa;
+    box-shadow: 1px 1px 3px #aaa;*/
+    font-size: 0px;
+    margin-right: 8px;
+}
+
+div.annnoteline {
+    display: inline-block;
+    width: 9px;
+    height: 1px;
+    border-bottom: 1px solid white;
+    margin-top: 1px;
+}
+
+.widgetNoteLabel {
+    display: inline-block;
+    vertical-align: top;
+    font-family: 'Trebuchet MS';
+	font-size: 14px;
+    font-weight: bold;
+	margin-bottom: 5px;    
+}
+
+.noteLink {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.noteLink:hover {
+    background-color: white;
+}

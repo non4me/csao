@@ -1,0 +1,72 @@
+:host {
+  .csoa-welcome {
+    &__header {
+      margin-top: 10px;
+
+      h2 {
+        color: #0065AC;
+      }
+    }
+
+    &__subheader {
+      margin: 20px 0;
+    }
+
+    &__teaser {
+      border: 1px solid #ececec;
+      padding: 10px;
+      min-height: 100px;
+      float: left;
+    }
+
+    &__teaser-img {
+      background-image: url("../assets/img/_csao-teaser-background.png");
+      width: 60px;
+      height: 60px;
+      margin: 18px 5px;
+    }
+
+    &__teaser-text {
+    }
+
+    &__teaser--1 {
+      img {
+        width: 31px;
+        height: 22px;
+        position: absolute;
+        margin: 19px 0 0 1px;
+      }
+    }
+
+    &__teaser--2 {
+      img {
+        width: 21px;
+        height: 18px;
+        position: absolute;
+        margin: 21px 0 0 5px;
+      }
+    }
+
+    &__teaser--3 {
+      img {
+        width: 16px;
+        height: 25px;
+        position: absolute;
+        margin: 17px 0 0 7px;
+      }
+    }
+
+    &__teaser--4 {
+      img {
+        width: 22px;
+        height: 22px;
+        position: absolute;
+        margin: 17px 0 0 4px;
+      }
+    }
+
+    &__navigation {
+      margin: 20px 0;
+    }
+  }
+}

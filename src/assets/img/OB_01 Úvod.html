@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://g92r3p.axshare.com/#g=1&p=ob_01__vod -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <title>OB_01 Úvod</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link type="text/css" href="./OB_01 Úvod_files/reset.css" rel="Stylesheet">
+    <link type="text/css" href="./OB_01 Úvod_files/default.css" rel="Stylesheet">
+    <!--<link href='https://fonts.googleapis.com/css?family=Nunito:300' rel='stylesheet' type='text/css'>-->
+
+    <script type="text/javascript">
+        AXSHARE_HOST_URL = 'http://share.axure.com';
+        AXSHARE_HOST_SECURE_URL = 'https://share.axure.com';
+        ACCOUNT_SERVICE_URL = 'http://accounts.axure.com';
+        ACCOUNT_SERVICE_SECURE_URL = 'https://accounts.axure.com';
+</script><script type="text/javascript">
+        if (location.href.toString().indexOf('file://localhost/') == 0) {
+            location.href = location.href.toString().replace('file://localhost/', 'file:///');
+        }
+    </script>
+
+    <!-- 8.0.0.3366 -->
+<script src="./OB_01 Úvod_files/jquery-1.7.1.min.js"></script>
+<script src="./OB_01 Úvod_files/startPre.js"></script>
+<script src="./OB_01 Úvod_files/document.js"></script>
+
+    <style type="text/css">
+
+#outerContainer {
+	width:1000px;
+	height:1500px;
+}
+
+.vsplitbar {
+    width: 3px;
+    /*background: #B9B9B9;*/
+    border-right: 1px solid #8f949a;
+}
+
+.vsplitbar:hover, .vsplitbar.active {
+    background: #8f949a;
+}
+
+#rightPanel {
+    background-color: White;
+}
+
+/*#leftPanel {
+    min-width: 120px;
+}*/
+
+.splitterMask {
+   position:absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   background-image: url(resources/images/transparent.gif);
+   z-index: 20000;
+}
+
+    </style>
+    <script type="text/javascript" language="JavaScript"><!--
+        var SITEMAP_COLLAPSE_VAR_NAME = 'c';
+        var PLUGIN_VAR_NAME = 'g';
+        var FOOTNOTES_VAR_NAME = 'fn';
+        var ADAPTIVE_VIEW_VAR_NAME = 'view';
+        var lastLeftPanelWidth = 295;
+        var toolBarOnly = true;
+
+        // isolate scope
+        (function() {
+            setUpController();
+            
+            var configuration = $axure.document.configuration;
+            var _settings = {};
+            _settings.projectId = 'G92R3P';
+            _settings.isAxshare = configuration.isAxshare;
+            _settings.loadFeedbackPlugin = configuration.loadFeedbackPlugin;
+            var cHash = getHashStringVar(SITEMAP_COLLAPSE_VAR_NAME);
+            _settings.startCollapsed = cHash == "1";
+            if(cHash == "2") closePlayer();
+            var gHash = getHashStringVar(PLUGIN_VAR_NAME);
+            if(gHash == "") gHash = 1;
+            _settings.startPluginGid = gHash;
+
+            $axure.player.settings = _settings;
+
+            $(window).bind('load', function() {
+                if(CHROME_5_LOCAL && !$('body').attr('pluginDetected')) {
+                    window.location = 'resources/chrome/chrome.html';
+                }
+            });
+
+            $(document).ready(function() {
+                $axure.page.bind('load.start', mainFrame_onload);
+                $axure.messageCenter.addMessageListener(messageCenter_message);
+
+                $(document).on('pluginShown', function (event, data) {
+                    setVarInCurrentUrlHash('g', data ? data : '');
+                });
+
+                $(document).on('pluginCreated', function(event, data) {
+                    if($axure.player.settings.startPluginGid == data) {
+                        $axure.player.showPlugin(data);
+                    }
+                });
+
+                if($axure.player.settings.loadFeedbackPlugin) {
+                    if($axure.player.settings.isAxshare) {
+                        $axure.utils.loadJS('/Scripts/plugins/feedback/feedback8.js');
+                    } else {
+                        $axure.utils.loadJS('http://share.axure.com/Scripts/plugins/feedback/feedback8.js');
+                    }
+                }
+
+                if(navigator.userAgent.indexOf("MSIE") >= 0) $('#outerContainer').width('100%');
+                initialize();
+                if($axure.player.settings.startCollapsed) $('#outerContainer').splitter({ sizeLeft: 0 });
+                else $('#outerContainer').splitter({ sizeLeft: lastLeftPanelWidth });
+                $('#leftPanel').width(lastLeftPanelWidth);
+                
+                $(window).resize(function() { resizeContent(); });
+
+                $('#maximizePanelContainer').hide();
+
+                initializeLogo();
+
+                $(window).resize();
+                resizeContent();
+                
+                $axure.player.collapseToBar();
+
+                if($axure.player.settings.startCollapsed) {
+                    collapse();
+                    $('#leftPanel').width(0);
+                }
+
+                if(MOBILE_DEVICE) {
+                    $('#interfaceControlFrameMinimizeContainer').height('45px');
+                    $('#interfaceControlFrameMinimizeContainer a').height('45px');
+                    $('#interfaceControlFrameHeaderContainer').css('margin-top','45px');
+                    $('#interfaceControlFrameCloseContainer a').css('padding','10px 0px');
+                    $('#maximizePanelContainer').height('45px');//.css('top','inherit').css('bottom','0px');
+
+                    $('body').removeClass('hashover');
+
+                    if(IOS) {
+                        $('#rightPanel').css('overflow', 'auto').css('-webkit-overflow-scrolling', 'touch').css('-ms-overflow-x', 'hidden');
+
+                        window.addEventListener("orientationchange", function() {
+                            var viewport = document.querySelector("meta[name=viewport]");
+                            //so iOS doesn't zoom when switching back to portrait
+                            viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0');
+                            viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+                            resizeContent();
+                        }, false);
+
+                        $axure.page.bind('load.start', function() {
+                            resizeContent();
+                        });
+                    }
+                }
+
+            });
+
+            function initialize() {
+                var legacyQString = getQueryString("Page");
+                if (legacyQString.length > 0) {
+                    location.href = location.href.substring(0, location.href.indexOf("?")) + "#p=" + legacyQString;
+                    return;
+                }
+
+                var mainFrame = document.getElementById("mainFrame");
+                //if it's local file on safari, test if we can access mainframe after its loaded
+                if(SAFARI && document.location.href.indexOf('file://') >= 0) {
+                    $(mainFrame).load(function () {
+                        var canAccess;
+                        try {
+                            var mainFrameWindow = mainFrame.contentWindow || mainFrame.contentDocument;
+                            mainFrameWindow['safari_file_CORS'] = 'Y';
+                            canAccess = mainFrameWindow['safari_file_CORS'] === 'Y';
+                        } catch(err) {
+                            canAccess = false;
+                        }
+
+                        if(!canAccess) window.location = 'resources/chrome/safari.html';
+                    });
+                }
+
+                mainFrame.contentWindow.location.href = getInitialUrl();
+            }
+
+            function initializeLogo() {
+                if($axure.document.configuration.logoImagePath) {
+                    var image = new Image();
+                    image.onload = function() {
+                        $('#logoImage').css('max-width', this.width + 'px');
+                        $axure.player.resizeContent();
+                    };
+                    image.src = $axure.document.configuration.logoImagePath;
+                
+                    $('#interfaceControlFrameLogoImageContainer').html('<img id="logoImage" src="" />');
+                    $('#logoImage').attr('src', $axure.document.configuration.logoImagePath).load(function() { resizeContent(); });
+                } else $('#interfaceControlFrameLogoImageContainer').hide();
+
+                if ($axure.document.configuration.logoImageCaption) {
+                    $('#interfaceControlFrameLogoCaptionContainer').html($axure.document.configuration.logoImageCaption);
+                } else $('#interfaceControlFrameLogoCaptionContainer').hide();
+
+                if(!$('#interfaceControlFrameLogoImageContainer').is(':visible') && !$('#interfaceControlFrameLogoCaptionContainer').is(':visible')) {
+                    $('#interfaceControlFrameLogoContainer').hide();
+                }
+            }
+
+            var resizeContent = $axure.player.resizeContent = function() {
+                var newHeight = $(window).height();
+                var newWidth = $(window).width();
+
+                var controlContainerHeight = newHeight;// - 30;
+                if($('#interfaceControlFrameLogoContainer').is(':visible')) controlContainerHeight -= $('#interfaceControlFrameLogoContainer').outerHeight();// + 16;
+
+                $('#outerContainer').height(newHeight).width(newWidth);
+                $('.vsplitbar').height(newHeight);
+                $('#leftPanel').height(newHeight);
+                $('#interfaceControlFrame').height(newHeight);
+                $('#interfaceControlFrameContainer').height(newHeight);
+                $('#interfaceControlFrameHostContainer').height(controlContainerHeight);
+
+                $('#rightPanel').height(newHeight);
+                $('#mainFrame').height(newHeight);
+
+                if($('#leftPanel').is(':visible')) $('#rightPanel').width($(window).width() - $('#leftPanel').width() - 1);// $('.vsplitbar').width());
+                else $('#rightPanel').width($(window).width());
+
+                $(document).trigger('ContainerHeightChange',[controlContainerHeight]);
+
+                if(MOBILE_DEVICE) {
+                    if(!(getHashStringVar(ADAPTIVE_VIEW_VAR_NAME).length > 0)) $axure.messageCenter.postMessage('setAdaptiveViewForSize', {'width':newWidth, 'height':$('#rightPanel').height()});
+                }
+            }
+
+            var collapseToBar = $axure.player.collapseToBar = function() {
+                lastLeftPanelWidth = $('#leftPanel').width();
+                $('#leftPanel').width('55px');
+                $('.vsplitbar').hide();
+                $('#rightPanel').width($(window).width() - $('#leftPanel').width());
+                $(window).resize();
+                $('#outerContainer').trigger('resize');
+                toolBarOnly = true;
+            }
+
+            var expandFromBar = $axure.player.expandFromBar = function() {
+                if($('.vsplitbar').is(':visible')) return;
+
+                $('#leftPanel').width(lastLeftPanelWidth);
+                $('.vsplitbar').show();
+                $('#rightPanel').width($(window).width() - $('#leftPanel').width() - 1);// $('.vsplitbar').width());
+                $(window).resize();
+                $('#outerContainer').trigger('resize');
+                toolBarOnly = false;
+            }
+
+        })();
+
+        function messageCenter_message(message, data) {
+            if(message == 'expandFrame') expand();
+            else if(message == 'getCollapseFrameOnLoad' && $axure.player.settings.startCollapsed && !MOBILE_DEVICE) $axure.messageCenter.postMessage('collapseFrameOnLoad');
+        }
+
+        
+        function getInitialUrl() {
+            var pageName = getHashStringVar("p");
+            if(pageName.length > 0) return pageName + ".html";
+            else {
+                var url = getFirstPageUrl($axure.document.sitemap.rootNodes);
+                return (url ? url : "about:blank");
+            }
+        }
+
+        function getFirstPageUrl(nodes) {
+            for (var i = 0; i < nodes.length; i++) {
+                var node = nodes[i];
+                if (node.url) return node.url;
+                else {
+                    var hasChildren = (node.children && node.children.length > 0);
+                    if (hasChildren) {
+                        var url = getFirstPageUrl(node.children);
+                        if (url) return url;
+                    }
+                }
+            }
+            return null;
+        }
+
+        function closePlayer() {
+            if($axure.page.location) window.location.href = $axure.page.location;
+            else {
+                var pageFile = getInitialUrl();
+                var currentLocation = window.location.toString();
+                window.location.href = currentLocation.substr(0, currentLocation.lastIndexOf("/") + 1) + pageFile;
+            }
+        }
+
+        function replaceHash(newHash) {
+            var currentLocWithoutHash = window.location.toString().split('#')[0];
+
+            //We use replace so that every hash change doesn't get appended to the history stack.
+            //We use replaceState in browsers that support it, else replace the location
+            if(typeof window.history.replaceState != 'undefined') {
+                try {
+                    //Chrome 45 (Version 45.0.2454.85 m) started throwing an error here when generated locally (this only happens with sitemap open) which broke all interactions.
+                    //try catch breaks the url adjusting nicely when the sitemap is open, but all interactions and forward and back buttons work.
+                    //Uncaught SecurityError: Failed to execute 'replaceState' on 'History': A history state object with URL 'file:///C:/Users/Ian/Documents/Axure/HTML/Untitled/start.html#p=home' cannot be created in a document with origin 'null'.
+                    window.history.replaceState(null, null, currentLocWithoutHash + newHash);
+                } catch(ex) {}
+            } else {
+                window.location.replace(currentLocWithoutHash + newHash);
+            }
+        }
+
+        function collapse() {
+            setVarInCurrentUrlHash('c', 1);
+            if(!toolBarOnly) lastLeftPanelWidth = $('#leftPanel').width();
+
+            $('#maximizePanelContainer').show();
+            $('#leftPanel').hide();
+            $('.vsplitbar').hide();
+            $('#rightPanel').width($(window).width());
+            $(window).resize();
+            $('#outerContainer').trigger('resize');
+
+            $(document).trigger('sidebarCollapse');
+
+            if(MOBILE_DEVICE) {
+                $('#maximizePanelContainer').animate({
+                    top:$('#rightPanel').height() - $('#maximizePanelContainer').height()
+                }, 300, 'swing', function() {
+                    $('#maximizePanelContainer').css('top', 'inherit').css('bottom', '0px');
+                });
+            }
+        }
+
+        function expand() {
+            if(MOBILE_DEVICE) {
+                $('#maximizePanelContainer').css('top', '0px').css('bottom', 'inherit');
+            }
+
+            deleteVarFromCurrentUrlHash('c');
+            $('#maximizePanelContainer').hide();
+            $('#leftPanel').width(lastLeftPanelWidth);
+            $('#leftPanel').show();
+            if(!toolBarOnly) {
+                $('.vsplitbar').show();
+                $('#rightPanel').width($(window).width() - $('#leftPanel').width() - 1);
+            } else {
+                $axure.player.collapseToBar();
+            }
+            $(window).resize();
+            $('#outerContainer').trigger('resize');
+
+            $(document).trigger('sidebarExpanded');
+        }
+
+
+        function mainFrame_onload() {
+            if($axure.page.pageName) document.title = $axure.page.pageName;
+        }
+
+        function getQueryString(query) {
+            var qstring = self.location.href.split("?");
+            if(qstring.length < 2) return "";
+            return GetParameter(qstring, query);
+        }
+        
+        function GetParameter(qstring, query) {
+            var prms = qstring[1].split("&");
+            var frmelements = new Array();
+            var currprmeter, querystr = "";
+
+            for(var i = 0; i < prms.length; i++) {
+                currprmeter = prms[i].split("=");
+                frmelements[i] = new Array();
+                frmelements[i][0] = currprmeter[0];
+                frmelements[i][1] = currprmeter[1];
+            }
+
+            for(j = 0; j < frmelements.length; j++) {
+                if(frmelements[j][0].toLowerCase() == query.toLowerCase()) {
+                    querystr = frmelements[j][1];
+                    break;
+                }
+            }
+            return querystr;
+        }
+        
+        function getHashStringVar(query) {
+            var qstring = self.location.href.split("#");
+            if(qstring.length < 2) return "";
+            return GetParameter(qstring, query);
+        }
+
+        function setHashStringVar(currentHash, varName, varVal) {
+            var varWithEqual = varName + '=';
+            var poundVarWithEqual = varVal === '' ? '' :  '#' + varName + '=' + varVal;
+            var ampVarWithEqual = varVal === '' ? '' :  '&' + varName + '=' + varVal;
+            var hashToSet = '';
+
+            var pageIndex = currentHash.indexOf('#' + varWithEqual);
+            if(pageIndex == -1) pageIndex = currentHash.indexOf('&' + varWithEqual);
+            if(pageIndex != -1) {
+                var newHash = currentHash.substring(0, pageIndex);
+
+                newHash = newHash == '' ? poundVarWithEqual : newHash + ampVarWithEqual;
+
+                var ampIndex = currentHash.indexOf('&', pageIndex + 1);
+                if(ampIndex != -1) {
+                    newHash = newHash == '' ? '#' + currentHash.substring(ampIndex + 1) : newHash + currentHash.substring(ampIndex);
+                }
+                hashToSet = newHash;
+            } else if(currentHash.indexOf('#') != -1) {
+                hashToSet = currentHash + ampVarWithEqual;
+            } else {
+                hashToSet = poundVarWithEqual;
+            }
+
+            if(hashToSet != '' || varVal == '') {
+                return hashToSet;
+            }
+
+            return null;
+        }
+
+        function setVarInCurrentUrlHash(varName, varVal) {
+            var newHash = setHashStringVar(window.location.hash, varName, varVal);
+
+            if(newHash != null) {
+                replaceHash(newHash);
+            }
+        }
+
+        function deleteHashStringVar(currentHash, varName) {
+            var varWithEqual = varName + '=';
+
+            var pageIndex = currentHash.indexOf('#' + varWithEqual);
+            if(pageIndex == -1) pageIndex = currentHash.indexOf('&' + varWithEqual);
+            if(pageIndex != -1) {
+                var newHash = currentHash.substring(0, pageIndex);
+
+                var ampIndex = currentHash.indexOf('&', pageIndex + 1);
+
+                //IF begin of string....if none blank, ELSE # instead of & and rest
+                //IF in string....prefix + if none blank, ELSE &-rest
+                if(newHash == '') { //beginning of string
+                    newHash = ampIndex != -1 ? '#' + currentHash.substring(ampIndex + 1) : '';
+                } else { //somewhere in the middle
+                    newHash = newHash + (ampIndex != -1 ? currentHash.substring(ampIndex) : '');
+                }
+
+                return newHash;
+            }
+
+            return null;
+        }
+
+        function deleteVarFromCurrentUrlHash(varName) {
+            var newHash = deleteHashStringVar(window.location.hash, varName);
+
+            if(newHash != null) {
+                replaceHash(newHash);
+            }
+        }
+    --></script>
+    
+    <link type="text/css" rel="Stylesheet" href="./OB_01 Úvod_files/sitemap.css">
+    <link type="text/css" rel="Stylesheet" href="./OB_01 Úvod_files/page_notes.css">
+    <link type="text/css" rel="Stylesheet" href="./OB_01 Úvod_files/debug.css">
+    <script src="./OB_01 Úvod_files/startPost.js"></script>
+
+
+    <!--<link type="text/css" rel="Stylesheet" href="plugins/recordplay/styles/recordplay.css" />
+    <script type="text/javascript" src="plugins/recordplay/recordplay.js"></script>-->
+    
+
+<link rel="stylesheet" type="text/css" href="./OB_01 Úvod_files/feedback8.css"><link rel="stylesheet" type="text/css" href="./OB_01 Úvod_files/axSpeechBubble.css"><link rel="stylesheet" type="text/css" href="./OB_01 Úvod_files/axScreenshot.css"><link rel="stylesheet" type="text/css" href="./OB_01 Úvod_files/axPin.css"><link rel="stylesheet" type="text/css" href="./OB_01 Úvod_files/axImgAreaSelect.css"><link rel="stylesheet" href="./OB_01 Úvod_files/style.css" type="text/css"><style type="text/css">/*.lleo_errorSelection *::-moz-selection,
+.lleo_errorSelection *::selection,
+.lleo_errorSelection *::-webkit-selection {
+    background-color: red !important;
+    color: #fff !important;;
+}*/
+
+#lleo_dialog,
+#lleo_dialog * {
+    color: #000 !important;
+    font: normal 13px Arial, Helvetica !important;
+    line-height: 15px !important;
+    margin: 0 !important;
+	padding: 0 !important;
+	background: none !important;
+	border: none 0 !important;
+	position: static !important;
+	vertical-align: baseline !important;
+	overflow: visible !important;
+	width: auto !important;
+	height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+	float: none !important;
+	visibility: visible !important;
+	text-align: left !important;
+    text-transform: none !important;
+	border-collapse: separate !important;
+	border-spacing: 2px !important;
+    box-sizing: content-box !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+    letter-spacing: normal !important;
+    -webkit-filter: none !important;
+    -moz-filter: none !important;
+    filter: none !important;
+}
+#lleo_dialog *:before,
+#lleo_dialog *:after {
+    content: '';
+}
+
+#lleo_dialog iframe {
+	height: 0 !important;
+	width: 0 !important;
+}
+
+#lleo_dialog {
+    position: absolute !important;
+    background: #fff !important;
+    border: solid 1px #ccc !important;
+    padding: 7px 0 0 !important;
+    left: -999px;
+    top: -999px;
+    width: 440px !important;
+    overflow: hidden;
+    display: block !important;
+    z-index: 999999999 !important;
+    box-shadow: 8px 16px 30px rgba(0, 0, 0, 0.16) !important;
+    border-radius: 3px !important;
+    opacity: 0 !important;
+    -webkit-transform: translateY(15px);
+    -moz-transform: translateY(15px);
+    -ms-transform: translateY(15px);
+    -o-transform: translateY(15px);
+    transform: translateY(15px);
+}
+#lleo_dialog.lleo_show_small {
+    width: 150px !important;
+}
+#lleo_dialog.lleo_show {
+    opacity: 1 !important;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s !important;
+    -moz-transition: -moz-transform 0.3s, opacity 0.3s !important;
+    -ms-transition: -ms-transform 0.3s, opacity 0.3s !important;
+    -o-transition: -o-transform 0.3s, opacity 0.3s !important;
+    transition: transform 0.3s, opacity 0.3s !important;
+}
+#lleo_dialog.lleo_collapse {
+    opacity: 0 !important;
+    -webkit-transform: scale(0.25, 0.1) translate(-550px, 100px);
+    -moz-transform: scale(0.25, 0.1) translate(-550px, 100px);
+    -ms-transform: scale(0.25, 0.1) translate(-550px, 100px);
+    -o-transform: scale(0.25, 0.1) translate(-550px, 100px);
+    transform: scale(0.25, 0.1) translate(-550px, 100px);
+    -webkit-transition: -webkit-transform 0.4s, opacity 0.4s !important;
+    -moz-transition: -moz-transform 0.4s, opacity 0.4s !important;
+    -ms-transition: -ms-transform 0.4s, opacity 0.4s !important;
+    -o-transition: -o-transform 0.4s, opacity 0.4s !important;
+    transition: transform 0.4s, opacity 0.4s !important;
+}
+#lleo_dialog input::-webkit-input-placeholder {
+    color: #aaa !important;
+}
+#lleo_dialog .lleo_has_pic #lleo_word {
+	margin-right: 80px !important;
+}
+#lleo_dialog #lleo_translationsContainer1 {
+	position: relative !important;
+}
+#lleo_dialog #lleo_translationsContainer2 {
+	padding: 7px 0 0 !important;
+	vertical-align: middle !important;
+}
+#lleo_dialog #lleo_word {
+    color: #000 !important;
+    margin: 0 5px 2px 0 !important;
+    /*float: left !important;*/
+}
+#lleo_dialog .lleo_has_sound #lleo_word {
+    margin-left: 30px !important;
+}
+#lleo_dialog #lleo_text {
+    font-weight: bold !important;
+    color: #d56e00 !important;
+    text-decoration: none !important;
+    cursor: default !important;
+}
+/*
+#lleo_dialog #lleo_text.lleo_known {
+    cursor: pointer !important;
+    text-decoration: underline !important;
+}
+*/
+/*#lleo_dialog #lleo_closeBtn {
+    position: absolute !important;
+    right: 6px !important;
+    top: 5px !important;
+    line-height: 1px !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    font-size: 0 !important;
+    color: #aaa !important;
+    display: block !important;
+	z-index: 9999999999 !important;
+	width: 7px !important;
+	height: 7px !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}*/
+
+#lleo_dialog #lleo_optionsBtn {
+    position: absolute !important; 
+    right: 3px !important;
+    top: 5px !important;
+    line-height: 1px !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    font-size: 13px !important;
+    color: #aaa !important;
+    padding: 2px !important;
+	display: none;
+}
+    #lleo_dialog.lleo_optionsShown #lleo_optionsBtn {
+        display: block !important;
+    }
+    #lleo_dialog #lleo_optionsBtn img {
+        width: 12px !important;
+        height: 12px !important;
+    }
+#lleo_dialog #lleo_sound {
+    float: left !important;
+    width: 16px !important;
+    height: 16px !important;
+    margin-left: 9px !important;
+    margin-right: 3px !important;
+    background: 0 0 no-repeat !important;
+    cursor: pointer !important;
+    display: none !important;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAfNJREFUeNq0U01IVFEU/u57Oo5WhBRIBBptykWLYBa2soWiEKQQEbrSFsGbVRQKQc2iFqGitXqvjQxCoCJCqyI0aBUtZILaJNUuYWYWo8HovJ/707nP94bnz0rxwvfOuefd8517fi5TSuE4i50YwZ3l37ZhNlpgzFkaaM/G9sHF1YskNrT+7l4PjMOcb78t2JL71uxgB+2UlfxHTtq5N94fIOh/88kWgWfl73ZCSQkpeGg3H091JY6dI2S00qA/N3KO3dDUYhFgEmZGurG+w9FqApIHsVM7kaTF9Nhn0r8Q7hPWQgIRuNaH3AMUA4W/Lkdh04cpFS43G0TgxQTvCdMETVAk3KynIHwXZU/ge8XDt7KH9bKLjU0P2zVO5LsEpSejVRJ9UR18EtfqKegovs9R3Q6w9c/H1o4Aa2Jwm1lIvn9RJ4w9RdRRzqcYrpwycCll4Cy1lnkS3Bc6vfBg28v8aRIfI78zhB/1GygROH3jLyyzMQ0zlUZuZBSlKkeLoegGtTjYLcJ8pF+NakHOFC2J6w+f25mxSfWrWFF/ShXVPTGvtN14NNkVnxlYWJkgZEL7/vwKr55lKSVnaGYWkuYgrgG172uUv47+U7fw0EHaJXmalUQy/HqO6lBzEsVjJC4Q8kd6TETQpjuaGOvjv8b/AgwA/ij1XMx58NIAAAAASUVORK5CYII=) !important;
+}
+#lleo_dialog .lleo_has_sound #lleo_sound {
+    display: block !important;
+}
+
+#lleo_dialog #lleo_soundWave {
+    border: solid 5px #4495CC !important;
+    border-radius: 5px !important;
+    position: absolute !important;
+    left: -5px !important;
+    top: -5px !important;
+    right: -5px !important;
+    bottom: -5px !important;
+    z-index: 0 !important;
+    opacity: 0.9 !important;
+    display: none !important;
+}
+    #lleo_dialog #lleo_soundWave.lleo_beforePlaying {
+        display: block !important;
+    }
+    #lleo_dialog #lleo_soundWave.lleo_playing {
+        opacity: 0 !important;
+        border-width: 20px !important;
+        border-radius: 30px !important;
+
+        -webkit-transform: scale(1.07,1.1) !important;
+        -moz-transform: scale(1.07,1.1) !important;
+        -ms-transform: scale(1.07,1.1) !important;
+        transform: scale(1.07,1.1) !important;
+
+        -webkit-transition: all 0.6s !important;
+        -moz-transition: all 0.6s !important;
+        -ms-transition: all 0.6s !important;
+        transition: all 0.6s !important;
+    }
+
+
+#lleo_dialog #lleo_picOuter {
+    position: absolute !important;
+    float: right !important;
+    top: 4px;
+    right: 5px;
+    z-index: 9 !important;
+    display: none !important;
+    width: 100px !important;
+}
+    #lleo_dialog.lleo_optionsShown #lleo_picOuter {
+        right: 25px;
+    }
+#lleo_dialog .lleo_has_pic #lleo_picOuter {
+    display: block !important;
+}
+    #lleo_dialog #lleo_picOuter:hover {
+        width: auto !important;
+        z-index: 11 !important;
+    }
+#lleo_dialog #lleo_pic,
+#lleo_dialog #lleo_picBig {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    border: solid 2px #fff !important;
+    -webkit-border-radius: 2px !important;
+    -moz-border-radius: 2px !important;
+	border-radius: 2px !important;
+    z-index: 1 !important;
+}
+#lleo_dialog #lleo_pic {
+	position: relative !important;
+    border: none !important;
+	width: 30px !important;
+}
+#lleo_dialog #lleo_picBig {
+    box-shadow: -1px 2px 4px rgba(0,0,0,0.3);
+    z-index: 2 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+    #lleo_dialog #lleo_picOuter:hover #lleo_picBig {
+        visibility: visible !important;
+        opacity: 1 !important;
+        -webkit-transition: opacity 0.3s !important;
+        -webkit-transition-delay: 0.3s !important;
+    }
+#lleo_dialog #lleo_transcription {
+    margin: 0 80px 4px 31px !important;
+    color: #aaaaaa !important;
+}
+#lleo_dialog .lleo_no_trans {
+    color: #aaa !important;
+}
+
+#lleo_dialog .ll-translation-counter {
+	float: right !important;
+    font-size: 11px !important;
+    color: #aaa !important;
+    padding: 2px 2px 1px 10px !important;
+}
+
+#lleo_dialog .ll-translation-text {
+	float: left !important;
+	/*width: 80% !important;*/
+}
+
+#lleo_dialog #lleo_trans a {
+    color: #3F669F !important;
+    text-decoration: none !important;
+    text-overflow: ellipsis !important;
+    padding: 1px 4px !important;
+    overflow: hidden !important;
+    float: left !important;
+    width: 320px !important;
+}
+
+#lleo_dialog .ll-translation-item {
+    color: #3F669F !important;
+    border: solid 1px #fff !important;
+    padding: 3px !important;
+    width: 100% !important;
+    float: left !important;
+	-moz-border-radius: 2px !important;
+	-webkit-border-radius: 2px !important;
+	border-radius: 2px !important;
+}
+
+#lleo_dialog .ll-translation-item:hover {
+	border: solid 1px #9FC2C9 !important;
+    background: #EDF4F6 !important;
+	cursor: pointer !important;
+}
+#lleo_dialog .ll-translation-item:hover .ll-translation-counter {
+	color: #83a0a6 !important;
+}
+
+#lleo_dialog .ll-translation-marker {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAWSURBVBhXY7RPm/+fAQkwIXNAbMICAJQ8AkvqWg/SAAAAAElFTkSuQmCC) !important;
+    display: inline-block !important;
+    width: 4px !important;
+    height: 4px !important;
+    margin: 7px 5px 2px 2px !important;
+    float: left !important;
+}
+
+#lleo_dialog #lleo_icons {
+    color: #aaa !important;
+    font-size: 11px !important;
+    background: #f8f8f8 !important;
+    padding: 10px 10px 10px 16px !important;
+}
+#lleo_icons a {
+    display: inline-block !important;
+    width: 16px !important;
+    height: 16px !important;
+    margin: 0 10px -4px 3px !important;
+    text-decoration: none !important;
+    opacity: 0.5 !important;
+    background: url(data:image/png;base64,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) !important;
+}
+#lleo_icons a:hover {
+    opacity: 1 !important;
+}
+#lleo_icons a.lleo_google     {background-position:-34px 0 !important;}
+#lleo_icons a.lleo_multitran  {background-position:-64px 0 !important;}
+#lleo_icons a.lleo_lingvo     {background-position:-51px 0 !important; width: 12px !important;}
+#lleo_icons a.lleo_dict       {background-position:-17px 0 !important;}
+#lleo_icons a.lleo_linguee    {background-position:-81px 0 !important;}
+#lleo_icons a.lleo_michaelis  {background-position:-98px 0 !important;}
+
+#lleo_dialog #lleo_contextContainer {
+    margin: 0 !important;
+    padding: 3px 15px 8px 10px !important;
+    background: #eee !important;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee)) !important;
+    background: -moz-linear-gradient(-90deg, #fff, #eee) !important;
+    border-bottom: solid 1px #ddd !important;
+    border-top-left-radius: 3px !important;
+    border-top-right-radius: 3px !important;
+    display: none !important;
+    overflow: hidden !important;
+}
+#lleo_dialog .lleo_has_context #lleo_contextContainer {
+    display: block !important;
+}
+#lleo_dialog #lleo_context {
+    color: #444 !important;
+    text-shadow: 1px 1px 0 #f4f4f4 !important;
+    line-height: 12px !important;
+    font-size: 11px !important;
+    margin-left: 2px !important;
+}
+#lleo_dialog #lleo_context b {
+    line-height: 12px !important;
+    color: #000 !important;
+    font-weight: bold !important;
+    font-size: 11px !important;
+}
+/*#lleo_dialog #lleo_gBrand {
+    color: #aaa !important;
+    font-size: 10px !important;
+    *//*padding-right: 52px !important;*//*
+    padding-bottom: 14px !important;
+    margin: -3px 4px 0 4px !important;
+    background: left bottom url(data:image/png;base64,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) no-repeat !important;
+    display: inline-block !important;
+    float: right !important;
+}
+#lleo_dialog #lleo_gBrand.hidden {
+    display: none !important;
+}*/
+#lleo_dialog #lleo_translateContextLink {
+    color: #444 !important;
+    text-shadow: 1px 1px 0 #f4f4f4 !important;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#ddd)) !important;
+    background: -moz-linear-gradient(-90deg, #f4f4f4, #ddd) !important;
+    border: solid 1px !important;
+    box-shadow: 1px 1px 0 #f6f6f6 !important;
+    border-color: #999 #aaa #aaa #999 !important;
+    -moz-border-radius: 2px !important;
+	-webkit-border-radius: 2px !important;
+	border-radius: 2px !important;
+    padding: 0 3px !important;
+    font-size: 11px !important;
+    text-decoration: none !important;
+    margin: 1px 5px 0 !important;
+    display: inline-block !important;
+    white-space: nowrap !important;
+}
+#lleo_dialog #lleo_translateContextLink:hover {
+    background: #f8f8f8 !important;
+}
+#lleo_dialog #lleo_translateContextLink.hidden {
+    visibility: hidden !important;
+}
+
+#lleo_dialog #lleo_setTransForm {
+    display: block !important;
+    margin-top: 3px !important;
+    padding-top: 5px !important;
+    /* Set position and background because the form might be overlapped by an image when no translations */
+    position: relative !important;
+    background: #fff !important;
+    z-index: 10 !important;
+    padding-bottom: 10px !important;
+    padding-left: 16px !important;
+}
+#lleo_dialog .lleo-custom-translation {
+    padding: 4px 5px !important;
+    border: solid 1px #ddd !important;
+	border-radius: 2px !important;
+    width: 90% !important;
+    min-width: 270px !important;
+    background: -webkit-gradient(linear, 0 0, 0 20, from(#f1f1f1), to(#fff)) !important;
+    background: -moz-linear-gradient(-90deg, #f1f1f1, #fff) !important;
+	font: normal 13px Arial, Helvetica !important;
+	line-height: 15px !important;
+}
+#lleo_dialog .lleo-custom-translation:hover {
+    border: solid 1px #aaa !important;
+}
+#lleo_dialog .lleo-custom-translation:focus {
+    background: #FFFEC9 !important;
+}
+
+#lleo_dialog *.hidden {
+    display: none !important;
+}
+
+#lleo_dialog .infinitive{
+    color: #D56E00 !important;
+    text-decoration: none;
+    border-bottom: 1px dotted #D56E00 !important;
+}
+#lleo_dialog .infinitive:hover{
+    border: none !important;
+}
+
+#lleo_dialog .lleo_separator {
+    height: 1px !important;
+    background: #eee;
+    margin-top: 10px !important;
+    background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%,#eee 8%,rgba(255,255,255,1) 80%) !important;
+    background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, #eee 8%, rgba(255,255,255,1) 80%) !important;
+    background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%,#eee 8%,rgba(255,255,255,1) 80%) !important;
+    background: linear-gradient(to right, rgba(255,255,255,1) 0%,#eee 8%,rgba(255,255,255,1) 80%) !important;
+}
+#lleo_dialog #lleo_trans {
+    /*border-top: 1px solid #eeeeee !important;*/
+    padding: 5px 30px 0 14px !important;
+    zoom: 1;
+}
+
+#lleo_dialog .lleo_clearfix {
+	display: block !important;
+	clear: both !important;
+	visibility: hidden !important;
+	height: 0 !important;
+	font-size: 0 !important;
+}
+
+
+#lleo_dialog #lleo_picOuter table {
+    width: 44px !important;
+    position: absolute !important;
+    right: 0 !important;
+    top: 0 !important;
+    vertical-align: middle !important;
+}
+
+#lleo_dialog #lleo_picOuter td {
+    width: 38px !important;
+    height: 38px !important;
+    /*border: 1px solid #eeeeee !important;*/
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+
+#lleo_dialog #lleo_picOuter td div {
+	height: 38px !important;
+	overflow: hidden !important;
+}
+
+#lleo_dialog .lleo_empty {
+    margin: 0 5px 7px !important;
+}
+
+#lleo_youtubeExportBtn {
+    margin-left: 10px;
+    height: 24px;
+}
+    #lleo_youtubeExportBtn i {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background: 0 0 url(https://d144fqpiyasmrr.cloudfront.net/plugins/all/images/i16.png) !important;
+    }
+    #lleo_youtubeExportBtn .yt-uix-button-content {
+        font-size: 12px;
+        line-height: 2px;
+    }
+
+
+/*** Parsed Lyrics Content *****************************/
+
+.lleo_lyrics tran {
+    background: transparent !important;
+    border-radius: 2px !important;
+    text-shadow: none !important;
+    cursor: pointer !important;
+}
+    .lleo_lyrics tran:hover {
+        color: #fff !important;
+        background: #C77213 !important;
+        -webkit-transition: all 0.1s !important;
+        -moz-transition: all 0.1s !important;
+        -ms-transition: all 0.1s !important;
+        -o-transition: all 0.1s !important;
+        transition: all 0.1s !important;
+    }
+
+.lleo_songName {
+    border: solid 1px #ffd47c;
+    background: #fff1c2;
+    border-radius: 2px;
+}
+
+.lleo_hidden_iframe {
+    visibility: hidden;
+}</style></head>
+<body scroll="no" class="hashover">
+    <div id="outerContainer" style="position: relative; height: 736px; width: 1440px;">
+
+        <div id="leftPanel" style="position: absolute; z-index: 1; left: 0px; width: 295px; height: 736px;">
+            <div id="interfaceControlFrame" style="height: 736px;">
+                <div id="interfaceControlFrameMinimizeContainer">
+                    <a title="Collapse" id="interfaceControlFrameMinimizeButton" onclick="collapse();">&nbsp;</a>
+                </div>
+                <div id="interfaceControlFrameHeaderContainer">
+                    <ul id="interfaceControlFrameHeader"><li id="sitemapHostBtn"><a pluginid="sitemapHost" class="selected">PAGES</a></li><li id="pageNotesHostBtn"><a pluginid="pageNotesHost">NOTES</a></li><li id="feedbackHostBtn"><a pluginid="feedbackHost">DISCUSS</a></li><li id="debugHostBtn"><a pluginid="debugHost">CONSOLE</a></li></ul>
+                </div>
+                <div id="interfaceControlFrameContainer" style="height: 736px;">
+                    <div id="interfaceControlFrameLogoContainer" style="display: none;">
+                        <div id="interfaceControlFrameLogoImageContainer" style="display: none;"></div>
+                        <div id="interfaceControlFrameLogoCaptionContainer" style="display: none;"></div>
+                    </div>
+                    <div id="interfaceControlFrameHostContainer" style="height: 736px;">
+                    <div id="sitemapHost" style="display: block;"><div id="sitemapHeader" '="" class="sitemapHeader"><div id="sitemapToolbar" class="sitemapToolbar"><div class="pluginNameHeader">PAGES</div><div class="pageNameHeader">OB_01 Úvod</div><div class="pageButtonHeader"><a id="adaptiveButton" title="Select Adaptive View" class="sitemapToolbarButton"></a><a id="linksButton" title="Get Links" class="sitemapToolbarButton"></a><a id="highlightInteractiveButton" title="Highlight interactive elements" class="sitemapToolbarButton"></a></div></div><div id="adaptiveViewsContainer" style="display: none;"><div style="margin-bottom:10px;">Adaptive Views</div><div class="adaptiveViewOption" val="auto"><div class="adaptiveCheckboxDiv checkedAdaptive"></div>Auto</div><div class="adaptiveViewOption currentAdaptiveView" val="default"><div class="adaptiveCheckboxDiv"></div>Base</div><div class="adaptiveViewOption" val="a"><div class="adaptiveCheckboxDiv"></div>Portrait Phone 6 (375 x any and below)</div></div><div id="sitemapLinksContainer" class="sitemapLinkContainer" style="display: none;"><div style="margin-bottom:10px;">Generate sharable URLs</div><input id="sitemapLinkWithPlayer" type="text" class="sitemapLinkField"><div class="sitemapOptionContainer"><div><label><input type="radio" name="sitemapToggle" value="withoutmap">Without Sidebar</label></div><div style="margin-top:10px;"><label><input type="radio" name="sitemapToggle" value="withmap">With Sidebar</label><div id="sitemapOptionsDiv" style="display: none;"><div class="sitemapUrlOption"><label><input type="checkbox" id="minimizeBox" disabled="disabled">Minimize sidebar</label></div><div class="sitemapUrlOption"><label><input type="checkbox" id="collapseBox" disabled="disabled">Pages closed</label></div><div class="sitemapUrlOption"><label><input type="checkbox" id="footnotesBox" disabled="disabled">Hide footnotes</label></div><div class="sitemapUrlOption"><label><input type="checkbox" id="highlightBox" disabled="disabled">Highlight interactive elements</label></div><div id="viewSelectDiv" class="sitemapUrlOption"><label>View: <select id="viewSelect" disabled="disabled"><option value="auto">Auto</option><option value="default">Base</option><option value="a">Portrait Phone 6 (375 x any and below)</option></select></label></div></div></div></div></div></div><div id="sitemapTreeContainer" style="height: 658px;"><div id="searchDiv" style=""><input id="searchBox" style="" type="text" class="searchBoxHint"></div><ul class="sitemapTree" style="clear:both;"><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:21px"><a class="sitemapPageLink" nodeurl="1_strana.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">1 strana</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:21px"><a class="sitemapPageLink" nodeurl="pr_chod_-_znovu.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">průchod - znovu</span></a></div></div></li><li class="sitemapNode sitemapExpandableNode"><div><div class="sitemapPageLinkContainer" style="margin-left:9px"><a class="sitemapPlusMinusLink"><span class="sitemapMinus"></span></a><span class="sitemapPageIcon sitemapFolderIcon"></span><span class="sitemapPageName">Obrazovky</span></div></div><ul><li class="sitemapNode sitemapLeafNode"><div class="sitemapHighlight"><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_01__vod.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_01 Úvod</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_02_jm_no.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_02 Jméno</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_03_souhlas_z_sady.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_03 Souhlas Zásady</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_04_telefon.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_04 Telefon</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_23_n_vrat_do_rozpracovan____dosti.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_23 Návrat do rozpracované žádosti</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="mo_14_n_vrat___slo_nenalezeno.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">MO_14 Návrat číslo nenalezeno</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="mo_02_exist__rozpracovan____dost.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">MO_02 Exist. rozpracovaná žádost</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_05_ov__en__telefonu.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_05 Ověření telefonu</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="3_v_ce_ne__5_pokus_.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">3 více než 5 pokusů</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_06_e-mail.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_06 E-mail</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="4_v_ce_ne__5_pokus_.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">4 více než 5 pokusů</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_07_ov__en__e-mailu.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_07 Ověření e-mailu</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_08___slo___tu.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_08 Číslo účtu</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="mo_05_jin__banka.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">MO_05 Jiná banka</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_24_zavol_me_v_m.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_24 Zavoláme Vám</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="mo_06__s_banka.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">MO_06 ČS banka</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_09_v_b_r_zp_sobu_focen_.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_09 Výběr způsobu focení</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="7_pro_mobil.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">7 pro mobil</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_11_nahr_n__dokladu___mobil.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_11 Nahrání dokladu – mobil</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="8_mobil.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">8 Mobil</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_12_vyt__en___daje.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_12 Vytěžené údaje</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="mo_07_nevyt__eno.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">MO_07 Nevytěženo</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="mo_08_moc_upraveno.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">MO_08 Moc upraveno</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_13_dal___informace.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_13 Další informace</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="mo_13_timeout.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">MO_13 TimeOut</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="mo_13_timeout_1.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">MO_13 TimeOut</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="mo_15_zp_t_prohl__e_.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">MO_15 Zpět prohlížeč</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_14_mobilita.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_14 Mobilita</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_15_p_ihla_ovac___daje_do_george.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_15 Přihlašovací údaje do George</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_16_souhlas_se_zpracov_n_m_osobn_ch__daj_.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_16 Souhlas se zpracováním osobních údajů</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_17_prohl__en___klienta_o_da_ov__povinnosti.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_17 Prohlášení  klienta o daňové povinnosti</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_18.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_18</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_19.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_19</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_20_ostatn__dokumentace.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_20 Ostatní dokumentace</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_21_podpis_r_mcov__smlouvy.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_21 Podpis rámcové smlouvy</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="mo_16__ek__na_platbu.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">MO_16 Čeká na platbu</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="mo_16__ek__na_platbu_1.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">MO_16 Čeká na platbu</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="13_podpis_-_ukon_eno.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">13 podpis - ukončeno</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_22_potvrzen__dokon_en_.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_22 Potvrzení dokončení</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="14_neni_otevrena_banka.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">14 neni otevrena banka</span></a></div></div></li></ul></li><li class="sitemapNode sitemapExpandableNode"><div><div class="sitemapPageLinkContainer" style="margin-left:9px"><a class="sitemapPlusMinusLink"><span class="sitemapMinus"></span></a><span class="sitemapPageIcon sitemapFolderIcon"></span><span class="sitemapPageName">Chybové hlášky</span></div></div><ul><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="chyba_zavolame.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">Chyba zavolame</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_25_banka__adatele_m__zav_eno.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_25 Banka žadatele má zavřeno</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_26_zam_tnut____dosti.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_26 Zamítnutí žádosti</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_27_chyba_syst_mu.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_27 Chyba systému</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_28_nepodporovan__prohl__e_.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_28 Nepodporovaný prohlížeč</span></a></div></div></li><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="ob_29_nespln_n__podm_nek.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">OB_29 Nesplnění podmínek</span></a></div></div></li></ul></li><li class="sitemapNode sitemapExpandableNode"><div><div class="sitemapPageLinkContainer" style="margin-left:9px"><a class="sitemapPlusMinusLink"><span class="sitemapMinus"></span></a><span class="sitemapPageIcon sitemapFolderIcon"></span><span class="sitemapPageName">Mobil</span></div></div><ul><li class="sitemapNode sitemapLeafNode"><div><div class="sitemapPageLinkContainer" style="margin-left:38px"><a class="sitemapPageLink" nodeurl="nahr_n_.html"><span class="sitemapPageIcon"></span><span class="sitemapPageName">Nahrání</span></a></div></div></li></ul></li></ul></div></div><div id="pageNotesHost" style="display: none;"><div id="pageNotesHeader" '="" class="sitemapHeader" style=""><div id="pageNotesToolbar" class="sitemapToolbar"><div class="pluginNameHeader">NOTES</div><div class="pageNameHeader">OB_01 Úvod</div><div class="pageButtonHeader"><a id="notesPreviousButton" title="Previous Page" class="sitemapToolbarButton prevPageButton"></a><a id="notesNextButton" title="Next Page" class="sitemapToolbarButton nextPageButton"></a><a id="footnotesButton" title="Toggle Footnotes" class="sitemapToolbarButton sitemapToolbarButtonSelected"></a></div></div></div><div id="pageNotesScrollContainer" style="height: 708px;"><div id="pageNotesContainer"><div id="pageNotesEmptyState" class="emptyStateContainer"><div class="emptyStateTitle">No notes for this page.</div><div class="emptyStateContent">Notes added in Axure RP will appear here.</div><div class="dottedDivider"></div></div><span id="pageNotesContent"></span></div></div></div><div id="debugHost" style="display: none;"><div id="debugHeader" '="" class="sitemapHeader" style=""><div id="debugToolbar" class="sitemapToolbar"><div class="pluginNameHeader">CONSOLE</div><div class="pageNameHeader">OB_01 Úvod</div></div></div><div id="debugScrollContainer" style="height: 708px;"><div id="debugContainer"><div id="variablesContainer"><div id="variablesClearLinkContainer" class="debugLinksContainer"><a id="variablesClearLink" title="Reset Variables">Reset Variables</a></div><div id="variablesDiv"><div class="variableDiv"><span class="variableName">OnLoadVariable</span><br>(blank)</div><div class="variableDiv"><span class="variableName">var_cislo</span><br>(blank)</div></div></div><div class="dottedDivider"></div><div id="traceContainer"><div id="traceClearLinkContainer" class="debugLinksContainer" style="display: none;"><a id="traceClearLink" title="Clear Trace">Clear Trace</a></div><div id="traceEmptyState" class="emptyStateContainer"><div class="emptyStateTitle">No interactions in the trace.</div><div class="emptyStateContent">Triggered interactions will appear here.</div><div class="dottedDivider"></div></div><div id="traceDiv"></div></div></div></div></div><div id="feedbackHost" style="display: none;"><div id="feedbackHeader" class="feedbackHeader" style=""><div id="refreshFeedbackDiv"></div><div id="feedbackToolbar" class="feedbackToolbar"><div id="feedbackNameHeader" class="pluginNameHeader">DISCUSS</div><div id="feedbackPageNameHeader" class="pageNameHeader" title="Discuss OB_01 Úvod">OB_01 Úvod</div><div id="feedbackButtonHeader" class="pageButtonHeader"><a id="feedbackButtonBack" class="feedbackToolbarButton" title="Go to Previous Page" href="https://g92r3p.axshare.com/#"></a><a id="feedbackButtonForward" class="feedbackToolbarButton" title="Go to Next Page" href="https://g92r3p.axshare.com/#"></a><div id="feedbackButtonShowHidePins" class="feedbackToolbarButton pin_on" style="margin-right: 4px;"></div></div></div></div><div id="feedbackNewIssueContainer" style=""><div id="feedbackNewIssuePin"><div id="feedbackNewIssuePinBtn" class="feedbackPinBtn">   <div class="addIcon"></div>   <span>COMMENT ON SCREEN</span></div></div><div class="feedbackDivider"></div><div id="feedbackNewIssue"><div id="feedbackTag_06183046847800599590314499724408081967079505134465811158307718312677" class="feedbackEntryItem" style="z-index: 1;">   <div id="feedbackNewIssueEntry" class="">       <input type="text" value="Or add comment without a location" class="newIssueTextInputMimic" readonly="">       <div class="newIssueFeedbackEntryContainer"><table class="feedbackUserHeaderTable">   <tbody>       <tr>           <td class="commenterImgTd">               <div class="commenterImg"></div>           </td>           <td class="feedbackUserNameTd">               <div class="anonFeedbackUserName">                   Commenting as <a class="anonNameLink"></a>               </div>               <div class="axureFeedbackUserName"></div>           </td>           <td class="loginOptionsTd"><a class="loginOption">Log In</a><a class="logoutOption">Log Out</a><span>▼</span>           </td>       </tr>   </tbody></table><div class="axContextSpeechBubbleAbove anonNameChangeBubble">   <div class="anonNameChangeContainer">       <table class="anonNameChangeInfo" style="margin-bottom: 10px;">           <tbody><tr>               <td class="commenterImgTd" style="padding-right: 0;"><div class="commenterImg anonCommenterImg"></div></td>               <td style="width: 5px;"></td>               <td class="anonNameChangeSection">                   <span class="anonNameChangeDisplay"></span>                   <input type="text" class="anonNameChangeInput">               </td>           </tr></tbody>       </table>   </div></div><div class="axClearMsgBubble axureLoginBubble">   <div class="axureLoginBubbleContainer">       <span style="font-weight: bold; font-size: 10px;">Login into your Axure Share account</span>       <input type="text" name="email" class="axureEmail watermark" style="margin-top: 7px;">       <input name="password" class="axurePassword watermark">       <div class="feedbackGreenBtn">LOG IN</div>       <div class="errorMessage"></div><div style="text-align: right; margin-top: 5px; font-size: 10px;"><span>No account? <a class="axureSignUpLink" href="https://share.axure.com/" target="_blank">Sign Up</a></span></div>   </div></div>           <div class="feedbackEntryTextAreaContainer issueFeedbackEntryTextAreaContainer">               <textarea id="" class="feedbackEntryTextArea issueFeedbackEntryTextArea" rows="3" maxlength="1000"></textarea><div class="textAreaCameraContainer"><div class="cameraIcon screenshotIssueIcon" onclick="executeScreenshot(this)" title="Ctrl + Shift + 1"></div></div>           </div>       </div>   </div>   <div class="feedbackEntryItemLinks" style="display: none;">       <div class="feedbackEntryItemErrorMessage"></div>       <a class="feedbackBlueBtn feedbackEntryItemSave">POST</a>   </div></div></div></div><div id="feedbackLoadingPlaceholder" style="display: none;"><div class="feedbackIssue">   <div class="animated-background">       <div class="background-masker masker0"></div>       <div class="background-masker masker1"></div>       <div class="background-masker masker2"></div>       <div class="background-masker masker3"></div>       <div class="background-masker masker4"></div>       <div class="background-masker masker5"></div>       <div class="background-masker masker6"></div>       <div class="background-masker masker7"></div>       <div class="background-masker masker8"></div>       <div class="background-masker masker9"></div>       <div class="background-masker masker10"></div>       <div class="background-masker masker11"></div>   </div></div><div class="feedbackIssue">   <div class="animated-background">       <div class="background-masker masker0"></div>       <div class="background-masker masker1"></div>       <div class="background-masker masker2"></div>       <div class="background-masker masker3"></div>       <div class="background-masker masker4"></div>       <div class="background-masker masker5"></div>       <div class="background-masker masker6"></div>       <div class="background-masker masker7"></div>       <div class="background-masker masker8"></div>       <div class="background-masker masker9"></div>       <div class="background-masker masker10"></div>       <div class="background-masker masker11"></div>   </div></div><div class="feedbackIssue">   <div class="animated-background">       <div class="background-masker masker0"></div>       <div class="background-masker masker1"></div>       <div class="background-masker masker2"></div>       <div class="background-masker masker3"></div>       <div class="background-masker masker4"></div>       <div class="background-masker masker5"></div>       <div class="background-masker masker6"></div>       <div class="background-masker masker7"></div>       <div class="background-masker masker8"></div>       <div class="background-masker masker9"></div>       <div class="background-masker masker10"></div>       <div class="background-masker masker11"></div>   </div></div></div><div id="feedbackNoDiscussionsDiv" style="display: block;"><div class="feedbackDivider"></div><div class="noDiscussionText">   <p>No Discussions for this page.</p>   <span>Either select the button above to post to a location on the page, or use the field to post without location.   </span></div></div><div id="feedbackScrollContainer" style="height: 688px;"><div id="feedbackSavedIssues" class=""></div><div id="showResolvedIssuesBtn" style="display: none;">SHOW RESOLVED COMMENTS</div><div id="feedbackResolvedIssuesDiv" style="display: none;"><div id="hideResolvedIssuesBtn">HIDE RESOLVED COMMENTS</div><div class="feedbackDivider"></div></div></div><div id="refreshNotification">New comments available <a id="feedbackRefreshLink">Click to Refresh</a></div></div></div>
+                </div>
+                <div id="interfaceControlFrameCloseContainer">
+                    <a title="Close" id="interfaceControlFrameCloseButton" onclick="closePlayer();">CLOSE</a>
+                </div>
+            </div>
+        </div><div class="vsplitbar" unselectable="on" style="z-index: 100; position: absolute; user-select: none; top: 0px; cursor: col-resize; left: 292px; height: 736px; display: block;"><a href="javascript:void(0)" accesskey="" tabindex="0" title="vsplitbar"></a></div>
+        <div id="rightPanel" style="position: absolute; z-index: 1; left: 296px; width: 1144px; height: 736px; overflow: hidden;"><div id="existingPinsOverlay" style="left: 0px; top: 0px;">&nbsp;</div>
+            <iframe id="mainFrame" name="mainFrame" width="100%" height="100%" src="./OB_01 Úvod_files/saved_resource.html" frameborder="0" style="display: block; height: 736px;" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+        </div>
+
+    </div>
+
+    <div id="maximizePanelContainer" style="display: none;">
+        <iframe id="expandFrame" src="./OB_01 Úvod_files/expand.html" width="100%" height="100%" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
+    </div>
+
+
+
+</body></html>
