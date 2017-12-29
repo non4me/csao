@@ -1,0 +1,7 @@
+{
+  "name": "AEM Ng4 Example",
+  "description": "AEM Ng4 Example",
+  "documentUsable": "false",
+  "implementation": "AemNg4Example",
+  "inletConfig": {}
+}
